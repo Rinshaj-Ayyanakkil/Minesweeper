@@ -36,6 +36,9 @@ export class Board {
     }
     //flag a cell
     flagCell(cell) {
+        // check if cell is opened
+        if (cell.isOpen) return;
+
         const isFlagged = cell.toggleFlagged();
         isFlagged ? this.flaggedCells++ : this.flaggedCells--;
         const flagCountElement = document.querySelector("#flag-count");
